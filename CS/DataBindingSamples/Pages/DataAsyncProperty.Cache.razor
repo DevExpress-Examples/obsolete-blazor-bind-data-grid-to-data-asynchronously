@@ -1,0 +1,34 @@
+@page "/DataAsyncUsingCache"
+@inject WeatherForecastService WeatherForecastService
+
+<h2>DataAsync: Cache Data</h2>
+
+<p>
+    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data source asynchronously. To avoid possible errors, the Data Grid should be able to identify data items individually. This example caches a data source instance to prevent excessive data extraction and keep the same item references during the page's entire life cycle. Use this method if your objects are persistent (for instance, data items from an ORM context).
+</p>
+
+<p>
+    Note that the <b>Render GUID</b> does not change during page initialization. This means the page is rendered only once.
+</p>
+
+<p>
+    <b>Render GUID</b>: @Guid.NewGuid()
+</p>
+
+
+<DxDataGrid DataAsync="@LoadDataAsync">
+    <Columns>
+        <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" />
+        <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" />
+        <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureC)" />
+        <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureF)" />
+    </Columns>
+</DxDataGrid>
+@code {
+    IEnumerable<WeatherForecast> Cache;
+    async Task<IEnumerable<WeatherForecast>> LoadDataAsync(CancellationToken token) {
+        if (Cache == null)
+            Cache = await WeatherForecastService.GetForecastAsync(DateTime.Now.Date);
+        return Cache;
+    }
+}

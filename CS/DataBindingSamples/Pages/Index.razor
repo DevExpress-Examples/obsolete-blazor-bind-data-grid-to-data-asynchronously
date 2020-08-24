@@ -1,0 +1,29 @@
+@page "/"
+
+<h2>How to  bind the Data Grid to a data source asynchronously</h2>
+
+
+<p>
+    The example below assigns a data source to the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data" target="_blank">Data</a> property and uses an asynchronous task to load data. In this case, the Data Grid page is rendered twice.
+</p>
+<ul>
+    <li><a href="/DataProperty">Data Property</a></li>
+</ul>
+
+
+<p>
+    The following examples use the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data source asynchronously. They demonstrate how to prevent excessive re-rendering for pages and guarantee correct Data Grid work.
+</p>
+
+<ul>
+    <li><a href="/DataAsyncUsingCache">DataAsync: Cache Data</a></li>
+    <li><a href="/DataAsyncUsingKeyFieldName">DataAsync: KeyFieldName</a></li>
+</ul>
+
+<p>
+    This example uses a cancellation token to prevent further execution for the already disposed Data Grid.
+</p>
+
+<ul>
+    <li><a href="/DataAsyncUsingCancellationToken">DataAsync: Cancellation Token</a></li>
+</ul>
