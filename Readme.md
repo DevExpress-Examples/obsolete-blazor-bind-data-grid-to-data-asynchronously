@@ -6,6 +6,6 @@ This example consists of the following pages:
 *	[DataAsync: KeyFieldName](./CS/DataBindingSamples/Pages/DataAsyncProperty.KeyFieldName.razor) - Uses the [DataAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync) property to load a data source asynchronously. Specifies a key data source field to identify a data source instance.
 *	[DataAsync: Cancellation Token](./CS/DataBindingSamples/Pages/DataAsyncProperty.CancellationToken.razor) - Uses the [DataAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync) property to load a data source asynchronously and processes a cancellation token to prevent further execution for the already disposed Data Grid.
 
-For more information, refer to the following help topic: [Bind to Data Asynchronously](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1#bind-to-data-asynchronously). 
+For more information, refer to the following help topic: [Bind to Data Asynchronously](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1#bind-to-data-asynchronously).
 
 
