@@ -4,7 +4,7 @@
 <h2>DataAsync: Cache Data</h2>
 
 <p>
-    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data source asynchronously. To avoid possible errors, the Data Grid should be able to identify data items individually. This example caches a data source instance to prevent excessive data extraction and keep the same item references during the page's entire life cycle. Use this method if your objects are persistent (for instance, data items from an ORM context).
+    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to bind the Data Grid to a strongly typed collection that is loaded asynchronously. The <b>DataAsync</b> function can be called multiple times during the grid's life cycle because Blazor can re-render components. This example demonstrates how to cache this function if it is time- or resource-consuming.
 </p>
 
 <p>
@@ -16,7 +16,7 @@
 </p>
 
 
-<DxDataGrid DataAsync="@LoadDataAsync">
+<DxDataGrid DataAsync="@LoadDataAsync" KeyFieldName="Id">
     <Columns>
         <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" />
         <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" />

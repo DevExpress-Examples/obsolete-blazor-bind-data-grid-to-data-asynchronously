@@ -4,7 +4,16 @@
 <h2>DataAsync: Cancellation Token</h2>
 
 <p>
-    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data source asynchronously. The <b>DataAsync</b> delegate accepts a cancellation token as a parameter. In this example, the token receives a cancellation signal when the <b>Data Grid</b> tab is closed. When you switch between tabs before grid data is loaded, the cancelled task count is increased.
+    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to bind the Data Grid to a strongly typed collection that is loaded asynchronously. The <b>DataAsync</b> delegate accepts a cancellation token as a parameter. In this example, the token receives a cancellation signal when the <b>Data Grid</b> tab is closed. When you switch between tabs before grid data is loaded, the cancelled task count is increased.
+</p>
+
+
+<p>
+    Note that the <b>Render GUID</b> does not change during page initialization. This means the page is rendered only once.
+</p>
+
+<p>
+    <b>Render GUID</b>: @Guid.NewGuid()
 </p>
 
 <DxTabs>
@@ -12,7 +21,7 @@
         <DxDataGrid DataAsync="@LoadDataAsync" KeyFieldName="Id">
             <Columns>
                 <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" />
-                <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)"/>
+                <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" />
                 <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureC)" />
                 <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureF)" />
             </Columns>
@@ -27,7 +36,7 @@
     async Task<IEnumerable<WeatherForecast>> LoadDataAsync(CancellationToken token) {
         try {
             return await WeatherForecastService.GetForecastAsync(DateTime.Now.Date, token);
-        } catch(TaskCanceledException) {
+        } catch (TaskCanceledException) {
             CancelledTaskCount++;
         }
         return Enumerable.Empty<WeatherForecast>();

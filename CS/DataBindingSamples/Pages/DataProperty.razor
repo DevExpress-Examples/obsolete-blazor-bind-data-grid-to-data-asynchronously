@@ -4,7 +4,7 @@
 <h2>Data Property</h2>
 
 <p>
-    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data" target="_blank">Data</a> property to bind the Data Grid. An asynchronous task loads data in the <a class="helplink" href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle#component-initialization-methods" target="_blank">OnInitializedAsync</a> lifecycle method. Note that the <b>Render GUID</b> changes during page initialization. This means that the page is rendered twice: before the task is completed (field values are not initialized) and after the task is completed (the task initialized field values).
+    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data" target="_blank">Data</a> property to bind the Data Grid to a strongly typed collection. An asynchronous task initializes this collection in the <a class="helplink" href="https://docs.microsoft.com/en-us/aspnet/core/blazor/components/lifecycle#component-initialization-methods" target="_blank">OnInitializedAsync</a> lifecycle method. Note that the <b>Render GUID</b> changes during page initialization. This means that the page is rendered twice: before the task is completed (field values are not initialized) and after the task is completed (the task initialized field values).
 </p>
 
 <p>

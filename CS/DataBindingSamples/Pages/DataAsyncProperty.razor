@@ -1,0 +1,30 @@
+@page "/DataAsync"
+@inject WeatherForecastService WeatherForecastService
+
+<h2>DataAsync Property</h2>
+
+<p>
+    This example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to bind the Data Grid to a strongly typed collection that is loaded asynchronously. This property allows you to prevent the grid's page from excessive re-rendering and draw the grid's skeleton before the data is loaded. Note that the <b>Render GUID</b> does not change during page initialization. This means the page is rendered only once.
+</p>
+
+<p>
+    The Data Grid should be able to identify individual data items when users edit data, select data rows, or expand detail rows in master-detail layouts. To avoid errors, use the Data Grid's <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.KeyFieldName" target="_blank">KeyFieldName</a> property to specify the key data field. 
+</p>
+
+<p>
+    <b>Render GUID</b>: @Guid.NewGuid()
+</p>
+
+<DxDataGrid DataAsync="@LoadDataAsync" KeyFieldName="Id">
+    <Columns>
+        <DxDataGridColumn Field="@nameof(WeatherForecast.Summary)" />
+        <DxDataGridDateEditColumn Field="@nameof(WeatherForecast.Date)" />
+        <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureC)" />
+        <DxDataGridSpinEditColumn Field="@nameof(WeatherForecast.TemperatureF)" />
+    </Columns>
+</DxDataGrid>
+@code {
+    async Task<IEnumerable<WeatherForecast>> LoadDataAsync(CancellationToken token) {
+        return await WeatherForecastService.GetForecastAsync(DateTime.Now.Date);
+    }
+}

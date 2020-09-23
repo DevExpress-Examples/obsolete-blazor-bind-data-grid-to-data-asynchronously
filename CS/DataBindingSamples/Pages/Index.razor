@@ -1,10 +1,10 @@
 @page "/"
 
-<h2>How to  bind the Data Grid to a data source asynchronously</h2>
+<h2>How to bind the Data Grid to a strongly typed collection loaded asynchronously</h2>
 
 
 <p>
-    The example below assigns a data source to the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data" target="_blank">Data</a> property and uses an asynchronous task to load data. In this case, the Data Grid page is rendered twice.
+    The example below assigns a data collection to the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.Data" target="_blank">Data</a> property and uses an asynchronous task to initialize the collection. In this case, the Data Grid page is rendered twice.
 </p>
 <ul>
     <li><a href="/DataProperty">Data Property</a></li>
@@ -12,12 +12,11 @@
 
 
 <p>
-    The following examples use the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data source asynchronously. They demonstrate how to prevent excessive re-rendering for pages and guarantee correct Data Grid work.
+    The following example uses the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> property to load a data collection asynchronously. This property allows you to prevent excessive re-rendering for pages.
 </p>
 
 <ul>
-    <li><a href="/DataAsyncUsingCache">DataAsync: Cache Data</a></li>
-    <li><a href="/DataAsyncUsingKeyFieldName">DataAsync: KeyFieldName</a></li>
+    <li><a href="/DataAsync">DataAsync Property</a></li>
 </ul>
 
 <p>
@@ -26,4 +25,12 @@
 
 <ul>
     <li><a href="/DataAsyncUsingCancellationToken">DataAsync: Cancellation Token</a></li>
+</ul>
+
+<p>
+    The following example caches the <a class="helplink" href="https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync" target="_blank">DataAsync</a> function. This is helpful if the function is time- or resource-consuming.
+</p>
+
+<ul>
+    <li><a href="/DataAsyncUsingCache">DataAsync: Cache</a></li>
 </ul>
