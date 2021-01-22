@@ -6,6 +6,6 @@ This example consists of the following pages:
 * [DataAsync: Cancellation Token](./CS/DataBindingSamples/Pages/DataAsyncProperty.CancellationToken.razor) - Uses the [DataAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync) property to load a data collection asynchronously and processes a cancellation token to prevent further execution for the already disposed Data Grid.
 * [DataAsync: Cache](./CS/DataBindingSamples/Pages/DataAsyncProperty.Cache.razor) - Caches the [DataAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync) function. This is helpful if the function is time- or resource-consuming.
 
-For more information, refer to the following help topic: [Bind to Data Asynchronously](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1#bind-to-data-asynchronously).
+For more information, refer to the [DataAsync](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxDataGrid-1.DataAsync) property description.
 
 
