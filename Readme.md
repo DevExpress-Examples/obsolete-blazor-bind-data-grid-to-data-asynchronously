@@ -33,4 +33,4 @@ In this example, there are four options that allow you to bind the DxDataGrid to
 
 ## More Examples
 
-
+* [Data Grid - Bind to Web API Service](https://github.com/DevExpress-Examples/blazor-DxDataGrid-Bind-To-Web-Api-Service)
