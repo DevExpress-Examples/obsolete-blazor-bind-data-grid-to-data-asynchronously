@@ -5,6 +5,8 @@
 <!-- default badges end -->
 # How to bind the Data Grid to a strongly typed collection loaded asynchronously
 
+The Data Grid was moved to maintenance support mode. No new features/capabilities will be added to this component. We recommend that you [migrate](https://docs.devexpress.com/Blazor/403162/grid/migrate-from-data-grid-to-grid) to the [Grid](https://docs.devexpress.com/Blazor/403143/grid) component. 
+
 You can bind the Data Grid component to a collection that is loaded synchronously or asynchronously.
 
 ![Data Grid: Data Binding Main Page](images/example-content.png)
