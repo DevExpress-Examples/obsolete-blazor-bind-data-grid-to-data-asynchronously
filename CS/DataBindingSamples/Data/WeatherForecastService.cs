@@ -1,14 +1,8 @@
-using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace DataBindingSamples.Data {
     public class WeatherForecastService {
         private static readonly string[] Summaries = new[] {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-
         public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate) => GetForecastAsync(startDate, CancellationToken.None);
         public async Task<WeatherForecast[]> GetForecastAsync(DateTime startDate, CancellationToken token) {
             await Task.Delay(1000, token);
